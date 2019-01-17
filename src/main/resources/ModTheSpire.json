@@ -1,0 +1,10 @@
+{
+  "modid": "DemomanMod",
+  "name": "Demoman Mod",
+  "author_list": ["knie20"],
+  "description": "Black Scottish Cyclops joins the struggle in the Spire.",
+  "version": "0.1",
+  "sts_version": "1-10-2019",
+  "mts_version": "3.6.3",
+  "dependencies": ["basemod, stslib, FriendlyMinions"]
+}

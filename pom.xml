@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>spirefortress</groupId>
-    <artifactId>SpireFortressMod</artifactId>
+    <groupId>demomanmod</groupId>
+    <artifactId>DemomanMod</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>SpireFortressMod</name>
+    <name>DemomanMod</name>
     <description>Team Fortress 2 in Slay the Spire</description>
 
     <dependencies>
@@ -50,7 +50,7 @@
     </dependencies>
 
     <build>
-        <finalName>SpireFortressMod</finalName>
+        <finalName>DemomanMod</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -70,9 +70,9 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
-                                <copy file="target\SpireFortressMod.jar" tofile="D:\Users\kaidong\IdeaProjects\STSMods\pack\content\SpireFortressMod.jar"/>
+                                <copy file="target\DemomanMod.jar" tofile="D:\Users\kaidong\IdeaProjects\STSMods\pack\content\DemomanMod.jar"/>
 
-                                <copy file="target\SpireFortressMod.jar" tofile="D:\SteamLibrary\steamapps\common\SlayTheSpire\mods\SpireFortressMod.jar"/>
+                                <copy file="target\DemomanMod.jar" tofile="D:\SteamLibrary\steamapps\common\SlayTheSpire\mods\DemomanMod.jar"/>
 
                             </target>
                         </configuration>
