@@ -17,9 +17,12 @@ import demomanmod.patches.AbstractCardEnum;
 public class Strike_Demoman extends CustomCard {
 
     private static final String ID = "Demoman:Strike";
-    private static final String NAME;
-    private static final String DESCRIPTION;
-    private static String UPGRADED_DESCRIPTION;
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+
+    private static final String NAME = cardStrings.NAME;
+    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final String IMG_PATH = "cards/Strike_Demoman.png";
     private static final CardColor COLOR = AbstractCardEnum.DEMOMAN_BRONZE;
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
@@ -29,8 +32,6 @@ public class Strike_Demoman extends CustomCard {
     private static final int COST = 1;
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
-
-    private static final CardStrings cardStrings;
 
     public Strike_Demoman() {
         super(ID, NAME, DemomanMod.makePath(IMG_PATH), COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
@@ -53,12 +54,5 @@ public class Strike_Demoman extends CustomCard {
             this.upgradeDamage(UPGRADE_PLUS_DMG);
             this.initializeDescription();
         }
-    }
-
-    static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
-        UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     }
 }

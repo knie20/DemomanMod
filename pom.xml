@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>DemomanMod</name>
-    <description>Team Fortress 2 in Slay the Spire</description>
+    <description>Demoman from Team Fortress 2 in Slay the Spire</description>
 
     <dependencies>
         <dependency>

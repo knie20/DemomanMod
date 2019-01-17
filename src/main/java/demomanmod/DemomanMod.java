@@ -1,5 +1,6 @@
 package demomanmod;
 
+import basemod.BaseMod;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 
 import com.badlogic.gdx.graphics.Color;
@@ -13,6 +14,7 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import demomanmod.patches.AbstractCardEnum;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,9 +35,34 @@ public class DemomanMod
     private static final String AUTHOR = "knie20";
     private static final String DESCRIPTION = "A Slay the Spire Mod that incorporates the Drunken Scottish Cyclops";
 
-    public static final Color DEMOMAN_BRONZE = CardHelper.getColor(64.0f, 70.0f, 70.0f);
+    public static final Color DEMOMAN_BRONZE = CardHelper.getColor(80.0f, 56.0f, 0.0f);
 
     private static final String DEFAULT_MOD_ASSETS_FOLDER = "demoman_images";
+
+    private static final String ATTACK_CARD_PATH = "cardui/512/bg_attack_bronze_512.png";
+    private static final String SKILL_CARD_PATH = "cardui/512/bg_skill_bronze_512.png";
+    private static final String POWER_CARD_PATH = "cardui/512/bg_power_bronze_512.png";
+    private static final String ENERGY_ORB_PATH = "cardui/512/card_energy_bronze_orb.png";
+    private static final String CARD_ENERGY_ORB = "cardui/512/card_small_bronze_orb.png";
+    private static final String PORTRAIT_ATTACK_CARD_PATH = "cardui/1024/bg_attack_bronze.png";
+    private static final String PORTRAIT_SKILL_CARD_PATH = "cardui/1024/bg_skill_bronze.png";
+    private static final String PORTRAIT_POWER_CARD_PATH = "cardui/1024/bg_power_bronze.png";
+    private static final String PORTRAIT_ENERGY_ORB_PATH = "cardui/1024/energy_bronze.png";
+
+    public DemomanMod() {
+        BaseMod.subscribe(this);
+
+        BaseMod.addColor(
+                AbstractCardEnum.DEMOMAN_BRONZE,
+                DEMOMAN_BRONZE,
+                makePath(ATTACK_CARD_PATH),
+                makePath(ATTACK_CARD_PATH),
+                makePath(ATTACK_CARD_PATH),
+                makePath(ATTACK_CARD_PATH),
+                makePath(ATTACK_CARD_PATH),
+                makePath(ATTACK_CARD_PATH),
+        );
+    }
 
     public static void initialize() {
         new DemomanMod();
