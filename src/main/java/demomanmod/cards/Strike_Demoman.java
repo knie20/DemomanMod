@@ -23,7 +23,7 @@ public class Strike_Demoman extends CustomCard {
     private static final String NAME = cardStrings.NAME;
     private static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final String IMG_PATH = "cards/Strike_Demoman.png";
+    private static final String IMG_PATH = "cards/Demoman_Strike.png";
     private static final CardColor COLOR = AbstractCardEnum.DEMOMAN_BRONZE;
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
     private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.BASIC;
