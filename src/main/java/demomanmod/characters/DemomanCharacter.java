@@ -15,12 +15,13 @@ public class DemomanCharacter extends CustomPlayer {
 
     public static Color cardRenderColor = CardHelper.getColor(80.0f, 56.0f, 0.0f);
 
-    public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
-    public static final String MY_CHARACTER_SHOULDER_2 = "char/shoulder2.png"; // campfire pose
-    public static final String MY_CHARACTER_SHOULDER_1 = "char/shoulder1.png"; // another campfire pose
-    public static final String MY_CHARACTER_CORPSE = "char/corpse.png"; // dead corpse
-    public static final String MY_CHARACTER_SKELETON_ATLAS = "char/skeleton.atlas"; // spine animation atlas
-    public static final String MY_CHARACTER_SKELETON_JSON = "char/skeleton.json"; // spine animation json
+    // -----------------Base stats-----------------
+    public static final int ENERGY_PER_TURN = 3;
+    public static final int STARTING_HP = 75;
+    public static final int MAX_HP = 75;
+    public static final int STARTING_GOLD = 99;
+    public static final int CARD_DRAW = 9;
+    public static final int ORB_SLOTS = 0;
 
     public DemomanCharacter(String name, PlayerClass playerClass, String[] orbTextures, String orbVfxPath, String model, String animation) {
         super(name, playerClass, orbTextures, orbVfxPath, model, animation);
