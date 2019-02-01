@@ -16,7 +16,7 @@ public class StickyOrb extends AbstractOrb {
 
     @Override
     public AbstractOrb makeCopy() {
-        return null;
+        return this.makeCopy();
     }
 
     @Override

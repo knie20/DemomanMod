@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import demomanmod.cards.Defend_Demoman;
+import demomanmod.cards.Strike_Demoman;
 
 import java.util.ArrayList;
 
@@ -27,8 +29,22 @@ public class DemomanCharacter extends CustomPlayer {
         super(name, playerClass, orbTextures, orbVfxPath, model, animation);
     }
 
+    public DemomanCharacter(String name, PlayerClass playerClass){
+        super(name, playerClass);
+    }
+
     @Override
     public ArrayList<String> getStartingDeck() {
+        ArrayList<String> StartingCards = new ArrayList();
+        StartingCards.add(Strike_Demoman.ID);
+        StartingCards.add(Strike_Demoman.ID);
+        StartingCards.add(Strike_Demoman.ID);
+        StartingCards.add(Strike_Demoman.ID);
+        StartingCards.add(Defend_Demoman.ID);
+        StartingCards.add(Defend_Demoman.ID);
+        StartingCards.add(Defend_Demoman.ID);
+        StartingCards.add(Defend_Demoman.ID);
+
         return null;
     }
 

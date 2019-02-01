@@ -14,36 +14,36 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import demomanmod.DemomanMod;
 import demomanmod.patches.AbstractCardEnum;
 
-public class Strike_Demoman extends CustomCard {
+public class Defend_Demoman extends CustomCard {
 
-    public static final String ID = "Demoman:Strike";
+    public static final String ID = "Demoman:Defend";
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "cards/Demoman_Strike.png";
+    public static final String IMG_PATH = "cards/Demoman_Defend.png";
     private static final CardColor COLOR = AbstractCardEnum.DEMOMAN_BRONZE;
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
+    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
     private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.BASIC;
-    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.ENEMY;
+    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;
 
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 6;
-    private static final int UPGRADE_PLUS_DAMAGE = 3;
+    private static final int BLOCK = 5;
+    private static final int UPGRADE_PLUS_DEFENSE = 3;
 
-    public Strike_Demoman() {
+    public Defend_Demoman() {
         super(ID, NAME, DemomanMod.makePath(IMG_PATH), COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = ATTACK_DMG;
+        this.baseBlock = BLOCK;
     }
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(
-                abstractMonster,
-                new DamageInfo(abstractPlayer, this.damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.BLUNT_LIGHT
+        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(
+                abstractPlayer,
+                abstractPlayer,
+                this.block
         ));
     }
 
@@ -51,7 +51,7 @@ public class Strike_Demoman extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            this.upgradeBlock(UPGRADE_PLUS_DEFENSE);
             this.initializeDescription();
         }
     }

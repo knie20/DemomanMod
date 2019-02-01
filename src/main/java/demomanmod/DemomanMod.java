@@ -109,8 +109,13 @@ public class DemomanMod
     public void receiveEditCharacters() {
         logger.info("Beginning to edit characters. " + "Add " + DemomanCharacterEnum.DEMOMAN.toString());
 
-        BaseMod.addCharacter((new DemomanCharacter("The Demoman", DemomanCharacterEnum.DEMOMAN),
-                makePath(DEMOMAN_CHARSELECT_BUTTON), makePath(DEMOMAN_PORTRAIT), DemomanCharacterEnum.DEMOMAN);
+        DemomanCharacter demoman = new DemomanCharacter("The Demoman", DemomanCharacterEnum.DEMOMAN);
+        BaseMod.addCharacter(
+                demoman,
+                makePath(DEMOMAN_CHARSELECT_BUTTON),
+                makePath(DEMOMAN_PORTRAIT),
+                DemomanCharacterEnum.DEMOMAN
+        );
 
         receiveEditPotions();
         logger.info("Done editing characters");
